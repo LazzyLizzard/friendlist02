@@ -13,11 +13,13 @@ const userList = {
             lastName: 'doe'
         }
     }
-}
+};
 
 class User extends React.Component {
     render () {
-        return <div>User aaa</div>;
+        return <ul>
+            <UserListItem />
+        </ul>;
     }
 }
 export default User;
