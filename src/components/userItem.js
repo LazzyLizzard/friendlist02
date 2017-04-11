@@ -4,13 +4,12 @@ class UserListItem extends Component {
 
     render() {
 
-        let ul = this.props.listToPass.list;
+        let list = this.props.listToPass.list,
+            items = Object.keys(list).map((key) => {
+               return <li key={key.toString()}>{list[key].name}</li>
+            });
 
-        return <div>
-            Object.keys(ul).map((key) => {
-            <li>{{ul[key].name}}</li>
-        }
-        </div>
+        return <ul>{items}</ul>;
 
     }
 }
