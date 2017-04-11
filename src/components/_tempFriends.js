@@ -18,7 +18,7 @@ const userList = {
 class User extends React.Component {
     render () {
         return <ul>
-            <UserListItem list={userList} />
+            <UserListItem listToPass={userList} />
         </ul>;
     }
 }
