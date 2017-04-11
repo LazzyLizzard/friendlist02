@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import testA from './components/_tempFriends'
+import User from './components/_tempFriends'
 
 
 export default class App extends Component {
@@ -8,7 +8,7 @@ export default class App extends Component {
         return (
 
             //<div>234</div>
-            <testA />
+            <User />
         );
     }
 }

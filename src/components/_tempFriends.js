@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-class User extends React.Component {
+class User extends Component {
     render () {
-        return <div>User</div>;
+        return <div>User aaa</div>;
     }
 }
 export default User;
