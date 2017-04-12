@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import UserListItem from './UserItem';
 
-const userList = {
+const userListList = {
 
     list: {
         1: {
@@ -15,11 +15,12 @@ const userList = {
     }
 };
 
-class User extends React.Component {
+class UsersList extends React.Component {
     render () {
         return <div>
-            <UserListItem listToPass={userList} />
+
+            <UserListItem listToPass={userListList} />
         </div>;
     }
 }
-export default User;
+export default UsersList;
