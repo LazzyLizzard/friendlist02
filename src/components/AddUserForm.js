@@ -2,13 +2,18 @@ import React, { Component, PropTypes } from 'react';
 
 class AddUserForm extends Component {
 
+    static propTypes = {
+        name: PropTypes.func.isRequired,
+        lastName: PropTypes.func.isRequired
+    };
+
     render() {
         return (
             <div>
 
                 <h3>Add user</h3>
 
-                <form action="">
+                <form action="" className="myform" onSubmit={this.handleSubmit.bind(this)}>
 
                     <div>
                         Name: <input type="text"
@@ -26,8 +31,24 @@ class AddUserForm extends Component {
                 </form>
             </div>
         )
-    }
+    };
+
+    handleSubmit(event) {
+
+        var target = event.target;
+        var inputs = target.querySelectorAll('input[type=text]');
+
+
+
+
+
+        event.preventDefault();
+
+
+    };
+
 }
+
 
 
 export default AddUserForm;

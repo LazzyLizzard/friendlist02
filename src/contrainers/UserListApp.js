@@ -6,19 +6,20 @@ import { connect } from 'react-redux';
 //import * as FriendsActions from '../actions/FriendsActions';
 import { UsersList, AddUserForm } from '../components';
 
-//@connect(state => ({
-//    friendlist: state.friendlist
-//}))
+
 export default class UserListApp extends Component {
 
-    //static propTypes = {
-    //    friendsById: PropTypes.object.isRequired,
-    //    dispatch: PropTypes.func.isRequired
-    //}
+    static propTypes = {
+        //    friendsById: PropTypes.object.isRequired,
+        //dispatch: PropTypes.func.isRequired
+    }
+
 
     render() {
         //const { friendlist: { friendsById }, dispatch } = this.props;
         //const actions = bindActionCreators(FriendsActions, dispatch);
+
+
 
         return (
             <div>
