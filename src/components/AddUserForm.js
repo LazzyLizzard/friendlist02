@@ -38,7 +38,18 @@ class AddUserForm extends Component {
         var target = event.target;
         var inputs = target.querySelectorAll('input[type=text]');
 
+        var data = {
+            name: inputs[0].value.trim(),
+            lastName: inputs[1].value.trim()
+        };
 
+        if (data.name !== '' && data.lastName !== '') {
+
+            console.log('1')
+
+        } else {
+            console.log('0')
+        }
 
 
 
