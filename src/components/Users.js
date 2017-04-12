@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import UserListItem from './userItem';
+import UserListItem from './UserItem';
 
 const userList = {
 
@@ -10,16 +10,16 @@ const userList = {
         },
         2: {
             name: 'aaa',
-            lastName: 'doe'
+            lastName: 'dow'
         }
     }
 };
 
 class User extends React.Component {
     render () {
-        return <ul>
+        return <div>
             <UserListItem listToPass={userList} />
-        </ul>;
+        </div>;
     }
 }
 export default User;

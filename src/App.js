@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import User from './components/_tempFriends'
+import User from './components/Users'
 
 
 export default class App extends Component {
