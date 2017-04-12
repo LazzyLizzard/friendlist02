@@ -19,6 +19,8 @@ class UsersList extends React.Component {
     render () {
         return <div>
 
+            <h3>Users list</h3>
+
             <UserListItem listToPass={userListList} />
         </div>;
     }

@@ -16,16 +16,15 @@ export default class UserListApp extends Component {
     //    dispatch: PropTypes.func.isRequired
     //}
 
-    render () {
+    render() {
         //const { friendlist: { friendsById }, dispatch } = this.props;
         //const actions = bindActionCreators(FriendsActions, dispatch);
 
         return (
             <div>
                 <h1>The UsersList</h1>
-
-                //<AddFriendInput addFriend={actions.addFriend} />
-                //<FriendList friends={friendsById} actions={actions} />
+                <AddUserForm />
+                <UsersList />
             </div>
         );
     }

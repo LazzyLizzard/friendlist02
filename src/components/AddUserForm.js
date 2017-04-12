@@ -1,30 +1,32 @@
 import React, { Component, PropTypes } from 'react';
 
-class AddUserForm extends React.Component {
+class AddUserForm extends Component {
 
-    render () {
+    render() {
         return (
+            <div>
 
-            <form action="">
+                <h3>Add user</h3>
 
-                <div>
-                    Name: <input type="text"
-                            name="name"
-                            placeholder="name" />
-                </div>
+                <form action="">
 
-                <div>Last name <input type="text"
-                                      name="lastName"
-                                      placeholder="last (family) name" />
-                </div>
+                    <div>
+                        Name: <input type="text"
+                                     name="name"
+                                     placeholder="name"/>
+                    </div>
 
-                <button type="submit">go</button>
+                    <div>Last name <input type="text"
+                                          name="lastName"
+                                          placeholder="last (family) name"/>
+                    </div>
 
-            </form>
+                    <button type="submit">go</button>
 
+                </form>
+            </div>
         )
     }
-
 }
 
 

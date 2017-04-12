@@ -21,10 +21,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-
-                <UsersList />
-
-
+                <UserListApp />
             </div>
         );
     }
