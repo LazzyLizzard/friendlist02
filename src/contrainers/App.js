@@ -17,11 +17,25 @@ import UserListApp from './UserListApp';
 import UsersList from './../components/Users'
 
 
+const userListList = {
+
+    list: {
+        1: {
+            name: 'john',
+            lastName: 'doe'
+        },
+        2: {
+            name: 'aaa',
+            lastName: 'dow'
+        }
+    }
+};
+
 export default class App extends Component {
     render() {
         return (
             <div>
-                <UserListApp />
+                <UserListApp usersList={userListList} />
             </div>
         );
     }

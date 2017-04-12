@@ -7,7 +7,18 @@ import { connect } from 'react-redux';
 import { UsersList, AddUserForm } from '../components';
 
 
+
 export default class UserListApp extends Component {
+
+
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            name: '',
+            lastName: ''
+        };
+    }
+
 
     static propTypes = {
         //    friendsById: PropTypes.object.isRequired,
@@ -25,7 +36,7 @@ export default class UserListApp extends Component {
             <div>
                 <h1>The UsersList</h1>
                 <AddUserForm />
-                <UsersList />
+                <UsersList usersList={this.props.usersList}/>
             </div>
         );
     }

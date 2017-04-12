@@ -1,27 +1,21 @@
 import React, { Component, PropTypes } from 'react';
 import UserListItem from './UserItem';
 
-const userListList = {
 
-    list: {
-        1: {
-            name: 'john',
-            lastName: 'doe'
-        },
-        2: {
-            name: 'aaa',
-            lastName: 'dow'
-        }
-    }
-};
 
 class UsersList extends React.Component {
+
     render () {
+        const usersList = this.props.usersList && this.props.usersList.list;
         return <div>
 
             <h3>Users list</h3>
+            <ul>
+                {Object.keys(usersList).map((key) => {
+                    return <UserListItem key={key} name={usersList[key].name} lastName={usersList[key].lastName}/>
+                })}
+            </ul>
 
-            <UserListItem listToPass={userListList} />
         </div>;
     }
 }

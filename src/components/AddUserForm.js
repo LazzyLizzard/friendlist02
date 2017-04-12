@@ -2,10 +2,15 @@ import React, { Component, PropTypes } from 'react';
 
 class AddUserForm extends Component {
 
-    static propTypes = {
-        name: PropTypes.func.isRequired,
-        lastName: PropTypes.func.isRequired
-    };
+    //static propTypes = {
+    //    name: PropTypes.func.isRequired,
+    //    lastName: PropTypes.func.isRequired
+    //};
+
+    constructor(props, context) {
+        super(props, context);
+    }
+
 
     render() {
         return (
@@ -35,6 +40,8 @@ class AddUserForm extends Component {
 
     handleSubmit(event) {
 
+        event.preventDefault();
+
         var target = event.target;
         var inputs = target.querySelectorAll('input[type=text]');
 
@@ -45,21 +52,22 @@ class AddUserForm extends Component {
 
         if (data.name !== '' && data.lastName !== '') {
 
-            console.log('1')
+            console.log('1');
+
+            this.setState({
+                name: '',
+                lastName: ''
+            });
+
 
         } else {
             console.log('0')
         }
 
 
-
-        event.preventDefault();
-
-
     };
 
 }
-
 
 
 export default AddUserForm;
