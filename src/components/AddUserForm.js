@@ -9,7 +9,13 @@ class AddUserForm extends Component {
 
     constructor(props, context) {
         super(props, context);
+        this.state = {name:'', lastName:''}
     }
+
+    handleNameChange = (e, id) => {
+        this.setState({[id]: e.target.value})
+    }
+
 
 
     render() {
@@ -22,11 +28,15 @@ class AddUserForm extends Component {
 
                     <div>
                         Name: <input type="text"
+                                     onChange={(e) => { this.handleNameChange(e, 'name') }}
                                      name="name"
+                                     value={this.state.name}
                                      placeholder="name"/>
                     </div>
 
                     <div>Last name <input type="text"
+                                          value={this.state.lastName}
+                                          onChange={(e) => { this.handleNameChange(e, 'lastName') }}
                                           name="lastName"
                                           placeholder="last (family) name"/>
                     </div>
@@ -42,27 +52,18 @@ class AddUserForm extends Component {
 
         event.preventDefault();
 
-        var target = event.target;
-        var inputs = target.querySelectorAll('input[type=text]');
-
-        var data = {
-            name: inputs[0].value.trim(),
-            lastName: inputs[1].value.trim()
-        };
-
-        if (data.name !== '' && data.lastName !== '') {
-
-            console.log('1');
-
-            this.setState({
-                name: '',
-                lastName: ''
-            });
-
-
-        } else {
-            console.log('0')
+        const user = {
+            name: this.state.name,
+            lastName: this.state.lastName,
         }
+        if(user.name && user.lastName) {
+            this.props.handleAddUser(user);
+            this.setState({
+                name:'',
+                lastName:''
+            })
+        }
+
 
 
     };

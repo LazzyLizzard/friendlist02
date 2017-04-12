@@ -13,18 +13,28 @@ export default class UserListApp extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {
-            name: '',
-            lastName: ''
-        };
+        this.state = {};
     }
-
 
     static propTypes = {
         //    friendsById: PropTypes.object.isRequired,
         //dispatch: PropTypes.func.isRequired
     }
 
+    componentWillMount() {
+        this.setState({ usersList: this.props.usersList })
+    }
+
+    handleAddUser = (user) => {
+        this.setState({
+            usersList: {
+                list: {
+                    ...this.state.usersList.list,
+                    [Object.keys(this.state.usersList.list).length + 1]: user
+                }
+            }
+        })
+    }
 
     render() {
         //const { friendlist: { friendsById }, dispatch } = this.props;
@@ -35,8 +45,8 @@ export default class UserListApp extends Component {
         return (
             <div>
                 <h1>The UsersList</h1>
-                <AddUserForm />
-                <UsersList usersList={this.props.usersList}/>
+                <AddUserForm handleAddUser={this.handleAddUser} />
+                <UsersList usersList={this.state.usersList}/>
             </div>
         );
     }
