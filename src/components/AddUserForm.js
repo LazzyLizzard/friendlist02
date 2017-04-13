@@ -9,7 +9,12 @@ class AddUserForm extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {name: '', lastName: ''}
+
+        // заранее описаное состояние
+        this.state = {
+            name: '',
+            lastName: ''
+        }
     }
 
     handleNameChange = (e, fieldName) => {
