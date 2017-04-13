@@ -14,7 +14,14 @@ class UsersList extends React.Component {
             <h3>Users list</h3>
             <ul>
                 {Object.keys(usersList).map((key) => {
-                    return <UserListItem key={key} name={usersList[key].name} lastName={usersList[key].lastName}/>
+                    //let k = key;
+                    return <UserListItem
+                        key={key}
+                        name={usersList[key].name}
+                        lastName={usersList[key].lastName}
+                        userId={key}
+                        setEditMode={this.props.setEditMode}
+                         />
                 })}
             </ul>
 

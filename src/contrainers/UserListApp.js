@@ -7,13 +7,14 @@ import { connect } from 'react-redux';
 import { UsersList, AddUserForm } from '../components';
 
 
-
 export default class UserListApp extends Component {
 
 
     constructor(props, context) {
         super(props, context);
-        this.state = {};
+        this.state = {
+            editId: false,
+        };
     }
 
     static propTypes = {
@@ -22,7 +23,10 @@ export default class UserListApp extends Component {
     }
 
     componentWillMount() {
-        this.setState({ usersList: this.props.usersList })
+        this.setState({
+            usersList: this.props.usersList
+
+        })
     }
 
     handleAddUser = (user) => {
@@ -36,17 +40,42 @@ export default class UserListApp extends Component {
         })
     }
 
+    handleEditUser = (user) => {
+
+        this.setState({
+            ...this.state,
+            editId: false,
+            usersList: {
+                ...this.state.usersList,
+                list: {
+                    ...this.state.usersList.list,
+                    [user.key]: {
+                        name: user.name,
+                        lastName: user.lastName
+                    }
+                }
+            }
+        })
+    }
+
+    setEditMode = (id) => {
+        this.setState({editId: id})
+    }
+
     render() {
         //const { friendlist: { friendsById }, dispatch } = this.props;
         //const actions = bindActionCreators(FriendsActions, dispatch);
+        const editId = this.state.editId
 
-
+        const userToEdit = editId ? this.state.usersList.list[editId] : false;
+        console.log()
 
         return (
             <div>
                 <h1>The UsersList</h1>
-                <AddUserForm handleAddUser={this.handleAddUser} />
-                <UsersList usersList={this.state.usersList}/>
+                <AddUserForm editId={editId} userToEdit={userToEdit} handleAddUser={this.handleAddUser}
+                             handleEditUser={this.handleEditUser}/>
+                <UsersList setEditMode={this.setEditMode} usersList={this.state.usersList}/>
             </div>
         );
     }
