@@ -9,13 +9,12 @@ class AddUserForm extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {name:'', lastName:''}
+        this.state = {name: '', lastName: ''}
     }
 
-    handleNameChange = (e, id) => {
-        this.setState({[id]: e.target.value})
+    handleNameChange = (e, fieldName) => {
+        this.setState({[fieldName]: e.target.value})
     }
-
 
 
     render() {
@@ -56,14 +55,14 @@ class AddUserForm extends Component {
             name: this.state.name,
             lastName: this.state.lastName,
         }
-        if(user.name && user.lastName) {
+        if (user.name && user.lastName) {
             this.props.handleAddUser(user);
+
             this.setState({
-                name:'',
-                lastName:''
+                name: '',
+                lastName: ''
             })
         }
-
 
 
     };
