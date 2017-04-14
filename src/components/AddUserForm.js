@@ -75,9 +75,9 @@ class AddUserForm extends Component {
         return (
             <div>
 
-                <h3>Add user</h3>
+                <h3>{ this.props.editId ? 'edit' : 'add' } user</h3>
 
-                <div>user</div>
+                <div>{this.state.name} {this.state.lastName}</div>
 
                 <form action="" onSubmit={this.handleSubmit.bind(this)}>
 
