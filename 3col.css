@@ -14,7 +14,9 @@ body {
 .col-data-brief,
 .col-data-full {
 	float: left;
-	min-height: 100%;
+	height: 100%;
+	overflow: auto;
+
 }
 
 .col-icons {
