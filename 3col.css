@@ -1,0 +1,32 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.col-icons,
+.col-data-brief,
+.col-data-full {
+	float: left;
+	min-height: 100%;
+}
+
+.col-icons {
+	width: 15%;
+	background: #9da0a4;
+}
+.col-data-brief {
+	width: 35%;
+	background: #999999;
+}
+
+.col-data-full {
+	width: 50%;
+	background: #cccccc;
+}
