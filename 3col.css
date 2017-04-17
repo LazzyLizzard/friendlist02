@@ -10,6 +10,10 @@ body {
 	box-sizing: border-box;
 }
 
+#root {
+	height: 100%
+}
+
 .col-icons,
 .col-data-brief,
 .col-data-full {
@@ -32,3 +36,10 @@ body {
 	width: 50%;
 	background: #cccccc;
 }
+
+
+
+
+
+
+
